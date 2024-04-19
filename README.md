@@ -26,10 +26,16 @@ graph TD
     subgraph Nodes
         Node1_0
         Node1_1
-        Node1_2
+        Node1_2 --> null5[null]
         Node2_0
         Node2_1
         Node2_2
+        Node2_0 --> null1[null]
+        Node2_1 --> null2[null]
+        Node2_2 --> null3[null]
+        Node2_2 --> null4[null]
+        
+
     end
     
     subgraph Row_Lists
@@ -39,6 +45,7 @@ graph TD
         Node1_1 --> Node1_2((3))
         Rows --> Row2[Row 2]
         Row2 --> Node2_0((4))
+
         Node2_0 --> Node2_1((5))
         Node2_1 --> Node2_2((6))
     end
@@ -54,7 +61,7 @@ graph TD
         Col3 --> Node1_2
         Node1_2 -.-> Node2_2
     end
-
+    
    
 
     classDef row_list margin-right:8cm
@@ -91,12 +98,16 @@ graph TD
     Matrix --> Cols[Row List Array]
 
      subgraph Nodes
-        Node1_0
+       Node1_0
         Node1_1
-        Node1_2
+        Node1_2 --> null5[null]
         Node2_0
         Node2_1
         Node2_2
+        Node2_0 --> null1[null]
+        Node2_1 --> null2[null]
+        Node2_2 --> null3[null]
+        Node2_2 --> null4[null]
     end
 
     subgraph Column_Lists_After
