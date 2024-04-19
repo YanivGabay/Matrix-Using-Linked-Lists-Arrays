@@ -96,6 +96,8 @@ void actualTransposeMatrix(Matrix* matrix);
 
 //void printColumn(Node* head) ;
 
+void transposeMatrix(Matrix* matrix);
+
 // ==== Main Function ====
 int main() {
     // ==== Variable Declarations ====
@@ -127,7 +129,7 @@ int main() {
     // 4 5 6
     // transpose
     // 1 4
-    // 2 5
+    // 2 0
     // 3 6
     // so let's do that
     //2 and 3 as row and col to simulate the above example
@@ -148,18 +150,24 @@ void transponseExample(int row,int col)
     insertNode(matrix, 2.0, 0, 1);
     insertNode(matrix, 3.0, 0, 2);
     insertNode(matrix, 4.0, 1, 0);
-    insertNode(matrix, 5.0, 1, 1);
+   // insertNode(matrix, 0.0, 1, 1);
     insertNode(matrix, 6.0, 1, 2);
 
     
 
     printFullMatrix(matrix,POINTER_TYPE::NEXT_ROW);
     printNonZeroElements(matrix,POINTER_TYPE::NEXT_ROW);
-    actualTransposeMatrix(matrix);
+    transposeMatrix(matrix);
     printFullMatrix(matrix,POINTER_TYPE::NEXT_COL);
     printNonZeroElements(matrix,POINTER_TYPE::NEXT_COL);
 
 }
+
+void transposeMatrix(Matrix* matrix) {
+    std::swap(matrix->_rows, matrix->_cols);
+    std::swap(matrix->_num_rows, matrix->_num_cols);
+}
+
 void actualTransposeMatrix(Matrix* matrix) {
     //swap the rows and columns
     Node** temp = matrix->_rows;

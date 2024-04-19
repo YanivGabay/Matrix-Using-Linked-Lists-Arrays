@@ -23,6 +23,7 @@ graph TD
     Matrix(Matrix) --> Rows[Row List Array]
     Matrix --> Cols[Column List Array]
 
+    
     subgraph Row_Lists
         Rows --> Row1[Row 1]
         Row1 --> Node1_0((1))
@@ -45,6 +46,8 @@ graph TD
         Col3 --> Node1_2
         Node1_2 -.-> Node2_2
     end
+
+   
 
     classDef row_list margin-right:8cm
     classDef col_list margin-left:6cm
