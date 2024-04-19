@@ -26,7 +26,7 @@ graph TD
     subgraph Row_Lists
         Rows --> Row1[Row 1]
         Row1 --> Node1_0((1))
-        Node1_0 --> Node1_1((2))
+        Node1_0 -- next_in_row --> Node1_1((2))
         Node1_1 --> Node1_2((3))
         Rows --> Row2[Row 2]
         Row2 --> Node2_0((4))
@@ -37,7 +37,7 @@ graph TD
     subgraph Column_Lists
         Cols --> Col1[Col 1]
         Col1 --> Node1_0
-        Node1_0 -.-> Node2_0
+        Node1_0 -.next_in_col.-> Node2_0
         Cols --> Col2[Col 2]
         Col2 --> Node1_1
         Node1_1 -.-> Node2_1
@@ -46,7 +46,7 @@ graph TD
         Node1_2 -.-> Node2_2
     end
 
-    classDef row_list margin-right:6cm
+    classDef row_list margin-right:8cm
     classDef col_list margin-left:6cm
     classDef matrix fill:#bbf,stroke:#333,stroke-width:1px;
     classDef list fill:#f9f,stroke:#333,stroke-width:1px;
