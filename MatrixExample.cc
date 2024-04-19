@@ -96,7 +96,7 @@ void actualTransposeMatrix(Matrix* matrix);
 
 //void printColumn(Node* head) ;
 
-void transposeMatrix(Matrix* matrix);
+void transposeMatrix(Matrix* const matrix);
 
 // ==== Main Function ====
 int main() {
@@ -163,7 +163,7 @@ void transponseExample(int row,int col)
 
 }
 
-void transposeMatrix(Matrix* matrix) {
+void transposeMatrix(Matrix* const matrix) {
     std::swap(matrix->_rows, matrix->_cols);
     std::swap(matrix->_num_rows, matrix->_num_cols);
 }

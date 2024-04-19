@@ -23,6 +23,14 @@ graph TD
     Matrix(Matrix) --> Rows[Row List Array]
     Matrix --> Cols[Column List Array]
 
+    subgraph Nodes
+        Node1_0
+        Node1_1
+        Node1_2
+        Node2_0
+        Node2_1
+        Node2_2
+    end
     
     subgraph Row_Lists
         Rows --> Row1[Row 1]
@@ -81,6 +89,15 @@ block-beta
 graph TD
     Matrix(Matrix) --> Rows[Column List Array]
     Matrix --> Cols[Row List Array]
+
+     subgraph Nodes
+        Node1_0
+        Node1_1
+        Node1_2
+        Node2_0
+        Node2_1
+        Node2_2
+    end
 
     subgraph Column_Lists_After
         Rows --> Col1[Col 1]
