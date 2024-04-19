@@ -65,7 +65,7 @@ graph TD
    
 
     classDef row_list margin-right:8cm
-    classDef col_list margin-left:6cm
+    classDef col_list margin-right:6cm
     classDef matrix fill:#bbf,stroke:#333,stroke-width:1px;
     classDef list fill:#f9f,stroke:#333,stroke-width:1px;
     classDef array fill:#ff9,stroke:#333,stroke-width:1px;
@@ -134,7 +134,7 @@ graph TD
     end
 
     classDef row_list margin-right:8cm
-    classDef col_list margin-left:6cm
+    classDef col_list margin-right:6cm
     classDef matrix fill:#bbf,stroke:#333,stroke-width:1px;
     classDef list fill:#f9f,stroke:#333,stroke-width:1px;
     classDef array fill:#ff9,stroke:#333,stroke-width:1px;
