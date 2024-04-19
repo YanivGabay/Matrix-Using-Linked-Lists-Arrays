@@ -62,3 +62,59 @@ graph TD
    
 
 ```
+
+after the transposition, the matrix will be represented as:
+```mermaid
+block-beta
+  columns 2
+  1:1
+  4:1
+  2:1
+  5:1
+  3:1
+  6:1
+
+```
+
+``` mermaid
+
+graph TD
+    Matrix(Matrix) --> Rows[Column List Array]
+    Matrix --> Cols[Row List Array]
+
+    subgraph Column_Lists_After
+        Rows --> Col1[Col 1]
+        Col1 --> Node1_0((1))
+        Node1_0 -- next_in_col --> Node1_1((2))
+        Node1_1 -- next_in_col --> Node1_2((3))
+        Rows --> Col2[Col 2]
+        Col2 --> Node2_0((4))
+        Node2_0 -- next_in_col --> Node2_1((5))
+        Node2_1 -- next_in_col --> Node2_2((6))
+    end
+    
+    subgraph Row_Lists_After
+        Cols --> Row1[Row 1]
+        Row1 --> Node1_0
+        Node1_0 -.next_in_row.-> Node2_0
+        Cols --> Row2[Row 2]
+        Row2 --> Node1_1
+        Node1_1 -.-> Node2_1
+        Cols --> Row3[Row 3]
+        Row3 --> Node1_2
+        Node1_2 -.-> Node2_2
+    end
+
+    classDef row_list margin-right:8cm
+    classDef col_list margin-left:6cm
+    classDef matrix fill:#bbf,stroke:#333,stroke-width:1px;
+    classDef list fill:#f9f,stroke:#333,stroke-width:1px;
+    classDef array fill:#ff9,stroke:#333,stroke-width:1px;
+    class Matrix matrix;
+    class Rows,Cols array;
+    class Row1,Row2,Row3,Col1,Col2,Col3 list;
+    class Column_Lists_After row_list
+    class Row_Lists_After col_list
+
+
+```
