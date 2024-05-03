@@ -1,5 +1,5 @@
 # Matrix-Using-Linked-Lists-Arrays
-
+[Medium article](https://medium.com/@yaniv242/optimizing-matrix-operations-in-c-arrays-of-linked-lists-a2f5aebd394f).
 ## Matrix Using Linked Lists & Arrays
 Inspired after reading about Sparse Matrix, I decided to implement a matrix using two arrays of linked lists.
 This structure is useful when the matrix is sparse, i.e., when most of the elements are zero.
