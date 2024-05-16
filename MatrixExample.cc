@@ -98,6 +98,7 @@ void actualTransposeMatrix(Matrix* matrix);
 
 void transposeMatrix(Matrix* const matrix);
 
+
 // ==== Main Function ====
 int main() {
     // ==== Variable Declarations ====
@@ -158,14 +159,17 @@ void transponseExample(int row,int col)
     printFullMatrix(matrix,POINTER_TYPE::NEXT_ROW);
     printNonZeroElements(matrix,POINTER_TYPE::NEXT_ROW);
     transposeMatrix(matrix);
+    
     printFullMatrix(matrix,POINTER_TYPE::NEXT_COL);
     printNonZeroElements(matrix,POINTER_TYPE::NEXT_COL);
 
 }
 
 void transposeMatrix(Matrix* const matrix) {
+    std::cout << "Transposing the matrix" << std::endl;
     std::swap(matrix->_rows, matrix->_cols);
     std::swap(matrix->_num_rows, matrix->_num_cols);
+    std::cout << "Matrix transposed" << std::endl;
 }
 
 void actualTransposeMatrix(Matrix* matrix) {
@@ -305,6 +309,10 @@ void insertNodeIntoCol(Node** head,Node* node) {
 }
 // insertNode
 void insertNode(Matrix* matrix, double value, int row_index, int col_index) {
+      if (row_index >= matrix->_num_rows || col_index >= matrix->_num_cols) {
+        std::cerr << "Error: Index out of bounds" << std::endl;
+        return;
+    }
     // create a new node
     Node* node = createNode(value, row_index, col_index);
     if(node == nullptr) {
@@ -315,3 +323,7 @@ void insertNode(Matrix* matrix, double value, int row_index, int col_index) {
     insertNodeIntoCol(&matrix->_cols[col_index], node);
 
     }
+
+
+
+
